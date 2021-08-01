@@ -1,18 +1,41 @@
+import { useState } from 'react'
 import Header from './components/Header';
+import Tasks from './components/Tasks';
 
-function App() {
+const App = () => {
+  const [tasks, setTasks] = useState([
+    {
+      id: 1,
+      text: 'Doctors Appointment',
+      day: 'Jan 2nd at 5:00pm',
+      reminder: true,
+    },
+
+    {
+      id: 2,
+      text: 'Gym',
+      day: 'August 8th at 10am',
+      reminder: true,
+
+    },
+
+    {
+      id: 3,
+      text: 'Meet Sarah',
+      day: 'Aug 18th at 4pm',
+      reminder: false,
+
+    },
+
+  ])
+
 
   return (
     <div className="container">
       <Header />
+      <Tasks tasks={tasks} />
     </div>
-  );
+  )
 }
-
-/*class App extends React.Component{
-  render(){
-    return<h1>Hello from class</h1>
-  }
-}*/
 
 export default App;
